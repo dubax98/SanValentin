@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Feliz San Valentín</title>
 
-<!-- Fuente romántica -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
 <style>
@@ -24,15 +23,40 @@
         position: absolute;
     }
 
-    #mensaje {
+    .contenedor-texto {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+
+    #mensaje {
         font-family: 'Dancing Script', cursive;
         font-size: 42px;
         color: #ff4d6d;
+        text-shadow: 0 0 15px #ff1a4d;
+        margin-bottom: 10px;
+    }
+
+    #submensaje {
+        font-family: 'Dancing Script', cursive;
+        font-size: 28px;
+        color: #ff99aa;
+        text-shadow: 0 0 10px #ff4d6d;
+    }
+
+    /* Texto debajo del corazón */
+    #infinito {
+        position: absolute;
+        bottom: 40px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 32px;
+        color: #ff4d6d;
+        text-shadow: 0 0 15px #ff1a4d;
         opacity: 0;
         transition: opacity 2s ease;
-        text-shadow: 0 0 15px #ff1a4d;
-        max-width: 80%;
     }
 </style>
 </head>
@@ -40,12 +64,19 @@
 <body>
 
 <canvas id="canvas"></canvas>
-<div id="mensaje">Feliz San Valentín mi bombón de caramelo</div>
+
+<div class="contenedor-texto" id="texto">
+    <div id="mensaje">Feliz San Valentín mi bombón de caramelo</div>
+    <div id="submensaje">Eres el latido más dulce de mi corazón ❤️</div>
+</div>
+
+<div id="infinito">Te I Love You infinito ♾️</div>
 
 <script>
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const mensaje = document.getElementById("mensaje");
+const texto = document.getElementById("texto");
+const infinito = document.getElementById("infinito");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -80,8 +111,8 @@ function drawHeart() {
         t += 0.05;
         requestAnimationFrame(drawHeart);
     } else {
-        // Mostrar mensaje cuando termina el dibujo
-        mensaje.style.opacity = 1;
+        texto.style.opacity = 1;
+        infinito.style.opacity = 1;
     }
 }
 
