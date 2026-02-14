@@ -25,12 +25,30 @@
 
     .contenedor-texto {
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
         display: flex;
         flex-direction: column;
         align-items: center;
         opacity: 0;
         transition: opacity 2s ease;
+        width: 80%;
     }
+    
+    #infinito {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Dancing Script', cursive;
+        font-size: 32px;
+        color: #ff4d6d;
+        text-shadow: 0 0 15px #ff1a4d;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+
 
     #mensaje {
         font-family: 'Dancing Script', cursive;
@@ -47,19 +65,6 @@
         text-shadow: 0 0 10px #ff4d6d;
     }
 
-    /* Texto debajo del corazón */
-    #infinito {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: 'Dancing Script', cursive;
-        font-size: 32px;
-        color: #ff4d6d;
-        text-shadow: 0 0 15px #ff1a4d;
-        opacity: 0;
-        transition: opacity 2s ease;
-    }
 </style>
 </head>
 
