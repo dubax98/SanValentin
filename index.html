@@ -8,62 +8,84 @@
 
 <style>
     body {
-        margin: 0;
-        background: radial-gradient(circle at center, #200000, #000000);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-        color: white;
-        text-align: center;
-    }
+    margin: 0;
+    background: radial-gradient(circle at center, #200000, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    font-size: 16px; /* base */
+}
 
-    canvas {
-        position: absolute;
-    }
+canvas {
+    position: absolute;
+}
 
-    .contenedor-texto {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -40%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 2s ease;
-        width: 80%;
-    }
-    
-    #infinito {
-        position: absolute;
-        top: 85%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: 'Dancing Script', cursive;
-        font-size: 32px;
-        color: #ff4d6d;
-        text-shadow: 0 0 15px #ff1a4d;
-        opacity: 0;
-        transition: opacity 2s ease;
-    }
+/* Texto principal y secundario dentro del corazón */
+.contenedor-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease;
+    width: 90vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
 
+#mensaje {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5vw;   /* escala con pantalla */
+    color: #ff4d6d;
+    text-shadow: 0 0 15px #ff1a4d;
+    margin-bottom: 0.3em;
+}
 
+#submensaje {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5vw;
+    color: #ff99aa;
+    text-shadow: 0 0 10px #ff4d6d;
+}
+
+/* Texto debajo del corazón */
+#infinito {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Dancing Script', cursive;
+    font-size: 6vw;
+    color: #ff4d6d;
+    text-shadow: 0 0 15px #ff1a4d;
+    opacity: 0;
+    transition: opacity 2s ease;
+    width: 90vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+/* Ajustes finos para pantallas muy pequeñas */
+@media (max-width: 320px) {
     #mensaje {
-        font-family: 'Dancing Script', cursive;
-        font-size: 42px;
-        color: #ff4d6d;
-        text-shadow: 0 0 15px #ff1a4d;
-        margin-bottom: 10px;
+        font-size: 6vw;
     }
-
     #submensaje {
-        font-family: 'Dancing Script', cursive;
-        font-size: 28px;
-        color: #ff99aa;
-        text-shadow: 0 0 10px #ff4d6d;
+        font-size: 4vw;
     }
+    #infinito {
+        font-size: 7vw;
+    }
+}
+
 
 </style>
 </head>
